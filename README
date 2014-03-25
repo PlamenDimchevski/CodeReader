@@ -1,0 +1,42 @@
+/**
+ * Livecycle
+ */
+
+var codeWalker = new CR.CodeWalker(content);
+
+// Total number of lines {number}
+codeWalker.lines
+
+// Line content {scting}. Pass a number of line:Optional
+codeWalker.line(number) 
+
+// next line content {string}
+codeWalker.prev()
+
+// prev line content {string}
+codeWalker.next()
+  
+// Set new content to be render. Set the content to be render {String}
+codeWalker.setCode(content)
+
+// returns the code that is read now
+codeWalker.getCode()
+
+
+var codeScope = new CR.CodeScope(content);
+
+// scope {String}
+codeScope.setScope(content)
+// {String} the type of the wrapper
+codeScope.wrapper
+// next scope {Object} 
+codeScope.next() 
+// previos scope {Object}
+codeScope.prev() 
+// content of the scope {String}
+codeScope.content() 
+
+// the scopes wrappers. Set the weapper element of the scope {Mixed}
+// pass type {String} [the name of the wrapper - eg. "function"/"Array"], open element {String} ["{"/"["], close element {String} ["}"/"]"]
+// pass type {Object} {"name": ["open", "close"]} - eg. {"function" : ["{","}"}}
+codeWalker.scopeWrappers(types [, types ...])
